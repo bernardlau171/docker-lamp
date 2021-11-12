@@ -2,6 +2,7 @@ version: '3'
 
 services:
     mysql-server:
+        container_name: mysqldb
         image: mysql/mysql-server
         ports:
             - "13306:3306"     
@@ -10,8 +11,9 @@ services:
             MYSQL_DATABASE: wordpress
             MYSQL_USER: wordpress_user
             MYSQL_PASSWORD: secret
-    wordpress:
-        image: wordpress:latest
+    woocommerce:
+        container_name: woocommerce
+        image: woocommerce:latest
         ports:
             - "20080:80"
         environment:
