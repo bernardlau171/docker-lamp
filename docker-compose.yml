@@ -13,7 +13,7 @@ services:
             MYSQL_PASSWORD: secret
     woocommerce:
         container_name: wordpress-woocommerce
-        image: thiagobarradas/woocommerce
+        image: wordpress
         ports:
             - "20080:80"
         environment:
