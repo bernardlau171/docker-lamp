@@ -36,4 +36,4 @@ services:
             PMA_USER: 'root'
             PMA_PASSWORD: "test"
         depends_on:
-            - mysqldb
+            - mysql-server
