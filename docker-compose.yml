@@ -1,7 +1,7 @@
 version: '3.2'
 
 services:
-    mysql-server:
+    mysqldb:
         container_name: mysqldb
         image: mysql/mysql-server
         ports:
@@ -13,7 +13,7 @@ services:
             MYSQL_PASSWORD: secret
         volumes:
             - ./dump:/docker-entrypoint-initdb.d
-    woocommerce:
+    wordpress-woocommerce:
         container_name: wordpress-woocommerce
         image: wordpress
         ports:
@@ -23,16 +23,15 @@ services:
             WORDPRESS_DB_USER: wordpress_user
             WORDPRESS_DB_PASSWORD: secret
         depends_on:
-            - mysql-server
+            - mysqldb
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
         container_name: pma
         environment:
-            PMA_HOST: 'mysql-server'
+            MYSQL_ROOT_PASSWORD: 12345
+            PMA_HOST: 'mysqldb'
             PMA_PORT: '3306'
-            PMA_USER: 'root'
-            PMA_PASSWORD: "12345"
         ports:
             - 8080:80
         depends_on:
-            - mysql-server
+            - mysqldb
