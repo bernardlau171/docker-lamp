@@ -11,10 +11,6 @@ services:
             MYSQL_DATABASE: wordpress
             MYSQL_USER: wordpress_user
             MYSQL_PASSWORD: secret
-        volumes:
-            - ./setup:/docker-entrypoint-initdb.d
-        volumes_from:
-            - setup
     woocommerce:
         container_name: wordpress-woocommerce
         image: wordpress
