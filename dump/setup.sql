@@ -2,14 +2,14 @@ CREATE TABLE `person` (
   `uid` int NOT NULL,
   `uname` varchar(20) NOT NULL,
   `age` int NOT NULL,
-  ‘gender’ varchar(1) NOT NULL,
-  ‘salary’ int NOT NULL,
-  ‘tid’ int NOT NULL,
+  `gender` varchar(1) NOT NULL,
+  `salary` int NOT NULL,
+  `tid` int NOT NULL,
   primary key(uid), 
   foreign key(tid) references team(tid)
 );
 
-INSERT INTO person (uid,uname,age,gender,salary, tid) VALUES
+INSERT INTO `person` (`uid`,`uname`,`age`,`gender`,`salary`, `tid`) VALUES
 (1, 'William', 30,'M', 20000, 1),
 (2, 'Marc', 17,'M', 20200, 2),
 (3, 'John', 55,'M', 25000, 3),
