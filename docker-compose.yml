@@ -19,7 +19,7 @@ services:
         ports:
             - "20080:80"
         environment:
-            WORDPRESS_DB_HOST: mysql-server:3306
+            WORDPRESS_DB_HOST: mysqldb:3306
             WORDPRESS_DB_USER: wordpress_user
             WORDPRESS_DB_PASSWORD: secret
         depends_on:
