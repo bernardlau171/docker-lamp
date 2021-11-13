@@ -29,7 +29,7 @@ services:
         container_name: pma
         environment:
             PMA_HOST: 'mysql-server'
-            PMA_PORT: 3306
+            PMA_PORT: '3306'
             PMA_USER: 'root'
             PMA_PASSWORD: "12345"
         ports:
