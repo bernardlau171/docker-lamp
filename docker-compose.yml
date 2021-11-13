@@ -30,7 +30,6 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: 12345
             PMA_HOST: 'mysqldb'
-            PMA_PORT: '3306'
         ports:
             - 8080:80
         depends_on:
